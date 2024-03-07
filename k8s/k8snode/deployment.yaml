@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8sndoe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8sndoe
+  template:
+    metadata:
+      labels:
+        app: k8sndoe
+    spec:
+      containers:
+      - name: k8sndoe
+        image: samuelhuarachi/k8snode:latest
+        ports:
+        - containerPort: 9090

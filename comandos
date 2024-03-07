@@ -1,0 +1,5 @@
+docker run --rm -p 9090:9090 k8snode
+docker build -t samuelhuarachi/k8snode:latest .
+
+private repo
+https://canister.io/solo
