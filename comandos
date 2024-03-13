@@ -2,7 +2,8 @@ docker run --rm -p 9090:9090 k8snode
 docker build -t samuelhuarachi/k8snode:latest .
 kubectl config use-context kind-fullcycle
 docker push samuelhuarachi/hello-go
-
+kubectl port-forward pod/goserver 5000:80
+kubectl delete pod goserver
 
 private repo
 https://canister.io/solo
