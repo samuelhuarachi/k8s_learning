@@ -1,9 +1,28 @@
+kind create cluster --config=k8s/kind.yaml --name=fullcycle
+kubectl cluster-info --context kind-fullcycle
+kubectl get nodes
 docker run --rm -p 9090:9090 k8snode
 docker build -t samuelhuarachi/k8snode:latest .
 kubectl config use-context kind-fullcycle
 docker push samuelhuarachi/hello-go
 kubectl port-forward pod/goserver 5000:80
+kubectl apply -f k8s/pod.yaml
 kubectl delete pod goserver
+kubectl get po
+kubectl apply -f k8s/replicaset.yaml
+kubectl get replicasets
+docker build -t samuelhuarachi/hello-go:v2 .
+docker push samuelhuarachi/hello-go:v2
+kubectl describe pod [pod name]
+kubectl delete replicaset goserver
+kubectl apply -f k8s/deployment.yaml
+kubectl get deployments
+kubectl rollout history deployment goserver
+kubectl rollout undo deployment goserver [opcional]--to-revision=[version number]
+kubectl describe deployment goserver
+
+
+
 
 private repo
 https://canister.io/solo
