@@ -7,4 +7,4 @@ metadata:
 spec:
   containers:
     - name: goserver
-      image: "samuelhuarachi/hello-go:latest"
+      image: "samuelhuarachi/hello-go:v3"

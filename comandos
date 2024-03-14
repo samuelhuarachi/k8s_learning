@@ -20,7 +20,8 @@ kubectl get deployments
 kubectl rollout history deployment goserver
 kubectl rollout undo deployment goserver [opcional]--to-revision=[version number]
 kubectl describe deployment goserver
-
+kubectl get svc
+kubectl port-forward svc/goserver-service 5000:80
 
 
 
