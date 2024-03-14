@@ -22,6 +22,8 @@ kubectl rollout undo deployment goserver [opcional]--to-revision=[version number
 kubectl describe deployment goserver
 kubectl get svc
 kubectl port-forward svc/goserver-service 5000:80
+kubectl proxy --port=8080
+http://localhost:8080/api/v1/namespaces/default/services/goserver-service
 
 
 
