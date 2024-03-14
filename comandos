@@ -1,4 +1,5 @@
 kind create cluster --config=k8s/kind.yaml --name=fullcycle
+kind delete cluster --name esquenta
 kubectl cluster-info --context kind-fullcycle
 kubectl get nodes
 docker run --rm -p 9090:9090 k8snode
