@@ -27,7 +27,7 @@ kubectl proxy --port=8080
 http://localhost:8080/api/v1/namespaces/default/services/goserver-service
 kubectl exec -it [pod name] -- bash
 kubectl logs [pod name]
-
+kubectl apply -f k8s/deployment.yaml && watch -n1 kubectl get pods
 
 private repo
 https://canister.io/solo
